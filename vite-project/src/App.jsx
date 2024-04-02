@@ -1,36 +1,50 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-
+import ShopItemBehaviour from './Datas/ShopsItems'
+import CreateShopItem from './Managers/ShopManager'
+import ScoreManager  from './Managers/ScoreManager'
 
 function App() {
 
-  const [count, setCount] = useState(0);
+  const [items, SetItems] = useState(ShopItemBehaviour);
+  const scoreManager = ScoreManager();
+  const [clickPower, setclickPower]  = useState(1);
+
+  const updateClickPower = (value) => {
+    setclickPower(clickPower +value);
+  }
 
   return (
     <>
       <div>
-         <nav className='Nav'>Nav {count}</nav>
-         <div className='mainSection'>
-          <img className='playerImg' alt='playerImage' onClick={() => setCount(count+1)} src='https://img.freepik.com/premium-vector/cartoon-business-team-working-startup-project_81522-4573.jpg'></img>  
-         </div>
+         <nav className='Nav'></nav>
+         <div className='flexBoxMain'>
+          <div className='flexboxImage'>
+          <div className='shakerSection'> 
+             <img className='playerImg' alt='Shaker to shake' onClick={ () => scoreManager.updateScore(clickPower)} src='https://i.pinimg.com/originals/48/5d/4d/485d4d5f6b04ec7d83abf58839a76a76.jpg'/> 
+            </div>
+            <div className='scoreText'>{scoreManager.score}  $</div>
+          </div>
+             <div className='flexboxShop'>
+              <div className='bonusSection'>    
+                    <div className='bonusItem'>Test</div>
+                    <div className='bonusItem'>Test</div>
+                    <div className='bonusItem'>Test</div>
+                    <div className='bonusItem'>Test</div>
+              </div>  
 
-         <div className='flexBox' >
-           <div className='bonusSection'>    
-              <div className='bonusItem'>Test</div>
-              <div className='bonusItem'>Test</div>
-              <div className='bonusItem'>Test</div>
-              <div className='bonusItem'>Test</div>
-           </div>
-           <div className='shopSection'>
-    
-              <div className='shopItem'>Test</div>
-              <div className='shopItem'>Test</div>
-              <div className='shopItem'>Test</div>
-              <div className='shopItem'>Test</div>
-              <div className='shopItem'>Test</div>   
-              
-           </div>
-         </div>
+              <div className='shopSection'>   
+              {items.map(item => (
+                  <CreateShopItem
+                  key={item.id}
+                  item={item}
+                  scoreManager={scoreManager}
+                  updateClickPower={updateClickPower}/> 
+                  ))} 
+              </div>  
+             </div>
+                   
+          </div>
       </div>
     </>
   )

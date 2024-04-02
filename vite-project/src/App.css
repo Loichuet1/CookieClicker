@@ -5,43 +5,91 @@
 .Nav{
   background-color: rgb(166, 255, 0);
   margin: 0;
-  height: 5vh;
+  height: 7vh;
 }
 
-.flexBox{
+.flexBoxMain{
 display:  flex;
-height: 45vh;
+height: 93vh;
+width: 100vw;
+background-color : rgb(0, 0, 0);
 }
 
-.mainSection{
+.flexboxShop{
+  width: 100%;
+  height: 100%;
+ }
+
+ .flexboxImage{
+  width: 70%;
+  height: 100%;
+ }
+
+.shakerSection{
   display: flex;
-  background-color : rgb(0, 0, 0);
   margin: 0;
-  height: 50vh;
+  height: 80%;
+  width: 100%;
   align-items: center;
   justify-content: center;
 }
 
+.scoreText{
+  width: 100%;
+  height: 20%;
+  color: white;
+  text-align: center;
+  font-size: 80px; 
+}
+
 .shopSection{
   background-color: blue;
-  width: 40vw;
+  width: 100%;
+  height: 60%;
 }
 
 .bonusSection{
   background-color: rgb(81, 255, 0);
-  width: 60vw;
-  padding: 0.2rem;
+  width: 100%;
+  height: 40%;
 }
 
 .playerImg{
- height: 100%;
+ height: 80%;
 }
 
 .shopItem{
- height: 20%;
- width: 100%;
- background-color: blueviolet;
- /*border: 0.1rem solid black;*/
+  display: flex;
+  height: 20%;
+  width: 100%;
+  background-color: rgb(192, 124, 255);
+  justify-content: space-between;  /* Add space between the elements */
+  align-items: center;  /* Center the items vertically */
+  padding: 10px;
+  box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+  border: 1px solid black;
+}
+
+.shopItemNotAvailable{
+  display: flex;
+  height: 20%;
+  width: 100%;
+  background-color: rgb(48, 48, 48);
+  color: white;
+  justify-content: space-between;  /* Add space between the elements */
+  align-items: center;  /* Center the items vertically */
+  padding: 10px;
+  box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+  border: 1px solid black;
+}
+
+.shopItem button {
+height: 100%;
+width: 150px;
+}
+
+.shopItemNotAvailable button {
+display: none;
 }
 
 .bonusItem{
