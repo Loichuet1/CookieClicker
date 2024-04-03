@@ -1,31 +1,51 @@
-*{
-  margin: 0; 
+:root {
+  --color-1: #332742;
+  --color-2: #2aab61;
+  --color-3: #f29849;
+  --color-4: #fa83cc;
+  --color-5: #38f2d0;
 }
 
-.Nav{
-  background-color: rgb(166, 255, 0);
+* {
   margin: 0;
-  height: 7vh;
 }
 
-.flexBoxMain{
-display:  flex;
-height: 93vh;
-width: 100vw;
-background-color : rgb(0, 0, 0);
+.Nav {
+  background-color: var(--color-5);
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.flexboxShop{
-  width: 100%;
+nav img {
   height: 100%;
- }
+}
 
- .flexboxImage{
-  width: 70%;
+ul {
+  display: flex;
+  gap: 20px;
+  padding-right: 2rem;
+}
+
+li {
+  list-style: none;
+  font-size: 1.5rem;
+}
+
+.flexBoxMain {
+  display: flex;
+  height: 90vh;
+  width: 100vw;
+  background-color: white;
+}
+
+.flexboxImage {
+  width: 40vw;
   height: 100%;
- }
+}
 
-.shakerSection{
+.shakerSection {
   display: flex;
   margin: 0;
   height: 80%;
@@ -34,68 +54,66 @@ background-color : rgb(0, 0, 0);
   justify-content: center;
 }
 
-.scoreText{
+.playerImg {
+  height: 80%;
+}
+
+.scoreText {
   width: 100%;
   height: 20%;
-  color: white;
+  color: black;
   text-align: center;
-  font-size: 80px; 
+  font-size: 80px;
 }
 
-.shopSection{
-  background-color: blue;
-  width: 100%;
-  height: 60%;
-}
-
-.bonusSection{
-  background-color: rgb(81, 255, 0);
-  width: 100%;
-  height: 40%;
-}
-
-.playerImg{
- height: 80%;
-}
-
-.shopItem{
+.flexboxShop {
+  width: 60vw;
+  height: 90vh;
   display: flex;
-  height: 20%;
-  width: 100%;
+}
+
+.classicCocktails {
+  width: 20vw;
+  background-color: red;
+}
+
+.signatureCocktails {
+  width: 20vw;
+  background-color: blue;
+}
+
+.extras {
+  width: 20vw;
+  background-color: green;
+}
+
+.shopItem {
+  display: flex;
   background-color: rgb(192, 124, 255);
-  justify-content: space-between;  /* Add space between the elements */
-  align-items: center;  /* Center the items vertically */
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
-  box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+  box-sizing: border-box;
   border: 1px solid black;
 }
 
-.shopItemNotAvailable{
+.shopItemNotAvailable {
   display: flex;
-  height: 20%;
-  width: 100%;
   background-color: rgb(48, 48, 48);
   color: white;
-  justify-content: space-between;  /* Add space between the elements */
-  align-items: center;  /* Center the items vertically */
+  justify-content: space-between;
+  align-items: center;
   padding: 10px;
-  box-sizing: border-box;  /* Include padding and border in the element's total width and height */
+  box-sizing: border-box;
   border: 1px solid black;
 }
 
 .shopItem button {
-height: 100%;
-width: 150px;
+  height: 100%;
+  width: 150px;
+  cursor: pointer;
 }
 
 .shopItemNotAvailable button {
-display: none;
+  display: none;
 }
-
-.bonusItem{
-  height: 25%;
-  width: 100%;
-  background-color: yellow;
-}
-
-
